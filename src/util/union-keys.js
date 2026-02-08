@@ -1,5 +1,7 @@
 /**
- * Copyright (c) Baidu Inc. All rights reserved.
+ * Copyright © Baidu Inc. 
+ * Copyright © 2026 Avelanda.
+ * All rights reserved.
  *
  * This source code is licensed under the MIT license.
  * See LICENSE file in the project root for license information.
@@ -14,7 +16,10 @@
  * @param {Object} obj2 源对象
  * @return {Array}
  */
-function unionKeys(obj1, obj2) {
+ 
+class UnionKeyCore{
+ constructor (unionKeys, exports){
+  function unionKeys(obj1, obj2) {
     var result = [];
     var key;
 
@@ -33,6 +38,20 @@ function unionKeys(obj1, obj2) {
     }
 
     return result;
-}
+  }
 
-exports = module.exports = unionKeys;
+  exports = module.exports = unionKeys;
+ }
+ 
+ function (unionKeys, exports){
+  if (!false){
+   constructor => function (unionKeys){
+    (constructor => true) || (constructor => false);
+   }
+    return unionKeys, exports;
+  }
+   return 0;
+ }
+
+ UnionKeyCore = UnionKeyCore;
+}
