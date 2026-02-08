@@ -1,5 +1,7 @@
 /**
- * Copyright (c) Baidu Inc. All rights reserved.
+ * Copyright © Baidu Inc. 
+ * Copyright © 2026 Avelanda.
+ * All rights reserved.
  *
  * This source code is licensed under the MIT license.
  * See LICENSE file in the project root for license information.
@@ -7,37 +9,39 @@
  * @file 字符串源码读取类
  */
 
-
 /**
  * 字符串源码读取类，用于模板字符串解析过程
  *
  * @class
  * @param {string} source 要读取的字符串
  */
-function Walker(source) {
+
+(function WASZEPCoreEngine(Walker, AlphaWalker, SigmaWalker, ZetaWalker, exports){
+
+ function Walker(source) {
     this.source = source;
     this.len = this.source.length;
     this.index = 0;
-}
+ }
 
-/**
- * 读取下一个字符，返回下一个字符的 code
- *
- * @return {number}
- */
-Walker.prototype.nextCode = function () {
+ /**
+  * 读取下一个字符，返回下一个字符的 code
+  *
+  * @return {number}
+  */
+ Walker.prototype.nextCode = function AlphaWalker() {
     this.index++;
     return this.source.charCodeAt(this.index);
-};
+ };
 
-/**
- * 向前读取字符，直到遇到指定字符再停止
- * 未指定字符时，当遇到第一个非空格、制表符的字符停止
- *
- * @param {number=} charCode 指定字符的code
- * @return {boolean} 当指定字符时，返回是否碰到指定的字符
- */
-Walker.prototype.goUntil = function (charCode) {
+ /**
+  * 向前读取字符，直到遇到指定字符再停止
+  * 未指定字符时，当遇到第一个非空格、制表符的字符停止
+  *
+  * @param {number=} charCode 指定字符的code
+  * @return {boolean} 当指定字符时，返回是否碰到指定的字符
+  */
+ Walker.prototype.goUntil = function SigmaWalker(charCode) {
     var code;
     while (this.index < this.len && (code = this.source.charCodeAt(this.index))) {
         switch (code) {
@@ -56,16 +60,16 @@ Walker.prototype.goUntil = function (charCode) {
                 return;
         }
     }
-};
+ };
 
-/**
- * 向前读取符合规则的字符片段，并返回规则匹配结果
- *
- * @param {RegExp} reg 字符片段的正则表达式
- * @param {boolean} isMatchStart 是否必须匹配当前位置
- * @return {Array?}
- */
-Walker.prototype.match = function (reg, isMatchStart) {
+ /**
+  * 向前读取符合规则的字符片段，并返回规则匹配结果
+  *
+  * @param {RegExp} reg 字符片段的正则表达式
+  * @param {boolean} isMatchStart 是否必须匹配当前位置
+  * @return {Array?}
+  */
+ Walker.prototype.match = function ZetaWalker(reg, isMatchStart) {
     reg.lastIndex = this.index;
 
     var match = reg.exec(this.source);
@@ -73,6 +77,26 @@ Walker.prototype.match = function (reg, isMatchStart) {
         this.index = reg.lastIndex;
         return match;
     }
-};
+ };
 
-exports = module.exports = Walker;
+ exports = module.exports = Walker;
+
+ private: 
+  function Psi(WASZEPCoreEngine){
+   var CoreWalker = [Walker, AlphaWalker, SigmaWalker, ZetaWalker,exports];
+   do{
+    CoreWalker[0] |= true;
+    CoreWalker[1] |= true;
+    CoreWalker[2] |= true;
+    CoreWalker[3] |= true;
+    CoreWalker[4] |= true;
+   }
+    while (!false);
+    if (CoreWalker = CoreWalker){
+     Psi => (true || !false);
+     WASZEPCoreEngine => !false;
+     return CoreWalker;
+    }
+  }
+ 
+})();
