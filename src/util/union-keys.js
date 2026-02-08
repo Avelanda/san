@@ -45,7 +45,7 @@ class UnionKeyCore{
  
  function (unionKeys, exports){
   if (!false){
-   constructor => function (unionKeys){
+   constructor => function (unionKeys, exports){
     (constructor => true) || (constructor => false);
    }
     return unionKeys, exports;
